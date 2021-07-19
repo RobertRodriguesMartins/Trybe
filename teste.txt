@@ -1,2 +1,0 @@
-1 - meu primeiro teste de deletar
-2 - e recuperar arquivos commitados
