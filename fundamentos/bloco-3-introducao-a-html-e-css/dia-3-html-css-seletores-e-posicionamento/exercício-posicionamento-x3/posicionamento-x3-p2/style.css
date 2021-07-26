@@ -1,3 +1,20 @@
-div:hover {
-  border: 5px solid black;
+
+div > div:nth-child(1){
+  background-color: aqua;
+}
+
+div > div:nth-child(2){
+  background-color: red;
+}
+
+div > div:nth-child(3) {
+  background-color: purple;
+}
+
+div > div:nth-child(4){
+  background-color: pink;
+}
+
+div > div:nth-child(5){
+  background-color: greenyellow;
 }
