@@ -1,4 +1,6 @@
-
+div > div:hover  {
+  border: 2px solid black;
+}
 div > div:nth-child(1){
   background-color: aqua;
 }
