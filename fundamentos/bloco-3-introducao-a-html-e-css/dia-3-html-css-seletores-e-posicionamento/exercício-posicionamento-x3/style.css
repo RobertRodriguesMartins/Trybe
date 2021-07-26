@@ -9,3 +9,7 @@ li:hover  {
 li:active {
   font-size: 20px;
 }
+
+ul > li, ol > li{
+  list-style: none;
+}
