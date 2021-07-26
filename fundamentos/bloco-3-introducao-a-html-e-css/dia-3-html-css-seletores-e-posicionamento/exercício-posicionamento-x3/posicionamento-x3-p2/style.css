@@ -1,6 +1,11 @@
-div:hover  {
-  border: 0.2px solid black;
+h3  {
+  display: inline;
 }
+
+div:hover  {
+  border: 4px solid yellow;
+}
+
 div:nth-of-type(1) {
   background-color: aqua;
 }
@@ -11,7 +16,9 @@ div:nth-of-type(2){
 
 div:nth-of-type(3) {
   background-color: purple;
+  height: 40px;
 }
+
 
 div:nth-of-type(4){
   background-color: black;
@@ -27,4 +34,5 @@ div:nth-of-type(2n) h3  {
 
 div:nth-of-type(2n -1) h3 {
   color: black;
+  font-style: italic;
 }
