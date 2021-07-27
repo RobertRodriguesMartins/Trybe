@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
     <style>
-      h1 {
+      h1, h2, h3 {
         text-align: center;
+      }
+
+      ul {
+        text-align: center;
+      }
+
+      li {
+        list-style: none;
       }
 
       .first {
@@ -15,7 +23,9 @@
         height: 50px;
         text-align: center;
         width: 200px;
+        margin: 0px auto;
       }
+
 
       .second {
         background-color: rgb(219, 219, 219);
@@ -23,6 +33,7 @@
         height: 50px;
         text-align: center;
         width: 300px;
+        display: inline-block;
       }
 
       .third {
@@ -31,6 +42,11 @@
         height: 50px;
         text-align: center;
         width: 300px;
+        display: inline-block;
+      }
+
+      .premios ul li {
+        display: inline-block;
       }
 
     </style>
@@ -41,12 +57,14 @@
     </header>
     <section>
       <ul>
-        <li class="first">1º - Equipe 1</li>
-        <li class="second">2º - Equipe 2</li>
-        <li class="third">3º - Equipe 3</li>
+          <li class="first">1º - Equipe 1</li>
+          <div class="align">
+            <li class="second">2º - Equipe 2</li>
+            <li class="third">3º - Equipe 3</li>
+          </div>
       </ul>
     </section>
-    <section>
+    <section class="premios">
       <h3>Premiação Primeiro Lugar:</h3>
       <ul>
         <li>| R$ 1000,00 por integrante da equipe |</li>
