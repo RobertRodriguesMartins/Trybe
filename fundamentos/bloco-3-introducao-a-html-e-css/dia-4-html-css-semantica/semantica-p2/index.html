@@ -6,6 +6,26 @@
 
     <style>
 
+      body {
+        overflow-y: scroll;
+      }
+
+      main {
+        display: inline-block;
+        max-width: 70%;
+        min-height: fit-content;
+        padding-top: 200px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 1.5em;
+        background-color: lavender;
+      }
+
+      .conteudo p {
+        text-indent: 2em;
+        text-align: justify;
+      }
+
       .tabela-classificacao {
         padding: 20px;;
       }
@@ -18,67 +38,100 @@
         text-decoration: none;
       }
 
-      .conteudo p {
-        text-indent: 2em;
+      header {
+        position: fixed;
+        top: 0;
+        max-height: 100px;
+        background-color:lavenderblush;
+        width: 100%;
       }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      header nav ul li {
+        display: inline-block;
+        padding: 20px;
+      }
+
+      aside {
+        display: inline-block;
+        position: fixed;
+        top: 100px;
+        right: 0;
+        text-align: center;
+        max-width: 30%;
+        padding-bottom: 100%;
+        background-color: lavenderblush;
+      }
+     
+     aside iframe {
+       max-width: 100%;
+     }
+
+     footer {
+       background-color: lavenderblush;
+       padding-bottom: 100px;
+       margin: 0;
+     }
     </style>
   </head>
   <body>
 
     <header>
       <h1>Soco a 80km/h: Conheça o Stomatopoda</h1>
+      <nav>
+        <ul>
+          <li>Página Inicial</li>
+          <li>Sobre</li>
+          <li>Contato</li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-      <ul>
-        <li>Página Inicial</li>
-        <li>Sobre</li>
-        <li>Contato</li>
-      </ul>
-    </nav>
-
-    <article>
-      <h2>Fatos sobre o Stomatopoda</h2>
-      <section>
-        <h3>Informações gerais do Stomatopoda</h3>
-          <table class="tabela-classificacao">
-            <thead>
-              <tr>
-                <th>Classificação Científica</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Reino: </td>
-                <td>Animalia</td>
-              </tr>
-              <tr>
-                <td>Filo: </td>
-                <td>Arthropoda</td>
-              </tr>
-              <tr>
-                <td>Subfilo: </td>
-                <td>Crustacea</td>
-              </tr>
-              <tr>
-                <td>Ordem: </td>
-                <td><strong>Stomatopoda</strong></td>
-              </tr>  
-              <tr>
-                <td>Nome Científico:</td>
-                <td><em>Odontodactylus scyllarus</em></td>
-              </tr>       
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Referência: </td>
-                <td><a href="https://pt.wikipedia.org/wiki/Stomatopo" target="_blank">Wikipédia</a></td>
-              </tr>
-            </tfoot>
-          </table>
-      </section>
-      
-      <main class="conteudo">
+    <main class="conteudo">
+      <article>
+        <h2>Fatos sobre o Stomatopoda</h2>
+        <section>
+          <h3>Informações gerais do Stomatopoda</h3>
+            <table class="tabela-classificacao">
+              <thead>
+                <tr>
+                  <th>Classificação Científica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Reino: </td>
+                  <td>Animalia</td>
+                </tr>
+                <tr>
+                  <td>Filo: </td>
+                  <td>Arthropoda</td>
+                </tr>
+                <tr>
+                  <td>Subfilo: </td>
+                  <td>Crustacea</td>
+                </tr>
+                <tr>
+                  <td>Ordem: </td>
+                  <td><strong>Stomatopoda</strong></td>
+                </tr>  
+                <tr>
+                  <td>Nome Científico:</td>
+                  <td><em>Odontodactylus scyllarus</em></td>
+                </tr>       
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Referência: </td>
+                  <td><a href="https://pt.wikipedia.org/wiki/Stomatopo" target="_blank">Wikipédia</a></td>
+                </tr>
+              </tfoot>
+            </table>
+        </section>
+  
         <section>
           <h3>Visão infravermelho</h3>
             <p>
@@ -106,9 +159,9 @@
       </article>
     </main>
 
-    <aside>
+    <aside class="conteudo-adicional">
       <h3>Veja mais sobre o <strong>Stomatopoda</strong></h3>
-      <iframe src="https://www.youtube.com/embed/E0Li1k5hGBE" ></iframe>
+      <iframe alt="Aqui tem um vídeo sobre Stomatopoda" src="https://www.youtube.com/embed/E0Li1k5hGBE" ></iframe>
     </aside>
 
     <footer>
