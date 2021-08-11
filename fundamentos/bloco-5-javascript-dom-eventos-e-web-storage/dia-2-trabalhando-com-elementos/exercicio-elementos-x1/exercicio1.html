@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+
+    <script>
+      let pai = document.getElementById("pai");
+      //1
+      let elementoOndeVoceEsta = document.querySelector("#elementoOndeVoceEsta");
+      //2
+      elementoOndeVoceEsta.parentNode.style.color = "blue";  
+      //3
+      let primeiroFilhoDoFilho = document.querySelector("#primeiroFilhoDoFilho");
+      primeiroFilhoDoFilho.innerText = "adicionar texto";
+      //4
+      console.log(pai.firstElementChild);
+      //5
+      console.log(elementoOndeVoceEsta.previousElementSibling)
+      //6
+      console.log(elementoOndeVoceEsta.nextSibling);
+      //7
+      console.log(elementoOndeVoceEsta.nextElementSibling);
+      //8
+      let filhosDePai = pai.children;
+      console.log(filhosDePai[2]);
+      //ou
+      let filhosDePai2 = pai.querySelector(":nth-of-type(3)");
+      console.log(filhosDePai2);
+      
+    </script>
+  </body>
+</html>
