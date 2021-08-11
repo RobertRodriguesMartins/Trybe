@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+
+    <script>
+      let elementoOndeVoceEsta = document.querySelector("#elementoOndeVoceEsta");
+      let irmaoOndeVoceEsta = document.createElement("div");
+
+      //1 criar irmão para elementoOndeVoceEsta
+      elementoOndeVoceEsta.parentElement.appendChild(irmaoOndeVoceEsta);
+      irmaoOndeVoceEsta.id = "teste-irmao";
+
+      //2 criar filho para elementoOndeVoceEsta
+      let filhoElementoOndeVoceEsta = document.createElement("ul");
+      elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
+      filhoElementoOndeVoceEsta.id = "teste-filho";
+
+      //3 criar filho para primeiroFilhoDoFilho
+      let filhodoPrimeiroFilho = document.createElement("p");
+      let primeiroFilho = document.querySelector("#primeiroFilho");
+
+      primeiroFilho.appendChild(filhodoPrimeiroFilho);
+      filhodoPrimeiroFilho.id = "filho-do-primeiro-filho";
+      filhodoPrimeiroFilho.innerText = "teste de texto.";
+
+      //4 a partir do filho criado 'filhodoPrimeiroFilho', acesse terceiroFilho
+      console.log(filhodoPrimeiroFilho.parentElement.parentElement.querySelector(":nth-of-type(3)"));
+    </script>
+  </body>
+</html>
