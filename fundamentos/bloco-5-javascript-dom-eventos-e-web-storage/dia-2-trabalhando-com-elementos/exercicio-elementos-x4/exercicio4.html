@@ -57,6 +57,8 @@
   </head>
   <body>
     <script>
+      //criar p para reutilizar;
+      let p = document.createElement("p");
       // 1 Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body 
 
       let h1 = document.createElement("h1");
@@ -75,10 +77,13 @@
       let section_1 = document.createElement("section");
       section_1.className = "center-content";
 
-      let sec = document.createElement("h1");
+      main.appendChild(section_1);
 
+      // 4 Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+      p.innerText = "algum texto";
+      section_1.appendChild(p);
 
-      main.appendChild(sec, section_1)
+      
 
     </script>
   </body>
