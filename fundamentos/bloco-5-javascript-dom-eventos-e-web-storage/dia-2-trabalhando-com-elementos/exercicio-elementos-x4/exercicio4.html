@@ -104,6 +104,20 @@
 
       section_2.appendChild(section_2_img);
 
+      // 8 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+      let valores = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+
+      let section_3_ul = document.createElement("ul");
+      
+
+      for (let i of valores) {
+        let li = document.createElement("li");
+        li.innerText = i;
+        section_3_ul.appendChild(li);
+      }
+      section_3.appendChild(section_3_ul);
+
       
 
     </script>
