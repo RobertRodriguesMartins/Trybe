@@ -32,19 +32,29 @@ function deletarClasse(elemento) {
    getNumbersOfTechElements(elemento);
  }
 
- window.onload = pegarElementosLi()
+ function escreverEmTech(evento) {
+  let elemento = evento.target;
+  let li = document.getElementsByClassName('tech');
+  li[0].innerText = elemento.value;
+  
+ }
 
- function pegarElementosLi() {
-   let li = document.getElementsByTagName("li");
+ window.onload = () => {
+    const li = document.getElementsByTagName("li");
    for (let elemento of li) {
      elemento.addEventListener("click", mudarClasse);
      console.log(elemento)
    }
+
+   const inputs = document.getElementById('input');
+   input.addEventListener('keyup', escreverEmTech)
  }
 
+//  Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+// com a classe 'tech';
+
+
 /*
- Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-com a classe 'tech';
  Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 redirecione para alguma página;
 1. Que tal redirecionar para seu portifólio?
