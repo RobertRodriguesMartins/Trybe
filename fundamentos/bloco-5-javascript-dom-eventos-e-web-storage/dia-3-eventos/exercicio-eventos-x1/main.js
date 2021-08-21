@@ -4,7 +4,7 @@ const thirdLi = document.getElementById('third-li');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('my-spotrybefy');
 
-
+ 
 // Copie esse arquivo e edite apenas ele;
 // Crie uma função que adicione a classe 'tech' ao elemento selecionado;
 
@@ -32,6 +32,9 @@ function deletarClasse(elemento) {
    getNumbersOfTechElements(elemento);
  }
 
+ //  Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+// com a classe 'tech';
+
  function escreverEmTech(evento) {
   let elemento = evento.target;
   let li = document.getElementsByClassName('tech');
@@ -39,25 +42,32 @@ function deletarClasse(elemento) {
   
  }
 
+//  Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
+//  redirecione para alguma página;
+
+ function abrirPagina() {
+  let url = "https://www.google.com";
+  window.open(url, "_blank");
+
+ }
+
  window.onload = () => {
     const li = document.getElementsByTagName("li");
    for (let elemento of li) {
      elemento.addEventListener("click", mudarClasse);
-     console.log(elemento)
    }
 
-   const inputs = document.getElementById('input');
+   const input = document.getElementById('input');
    input.addEventListener('keyup', escreverEmTech)
- }
 
-//  Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-// com a classe 'tech';
+   const titulo = document.getElementById('my-spotrybefy');
+   titulo.addEventListener('dblclick', abrirPagina);
+  
+ }
 
 
 /*
- Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
-redirecione para alguma página;
-1. Que tal redirecionar para seu portifólio?
+
  Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 a cor do mesmo;
 
