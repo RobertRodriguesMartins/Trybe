@@ -51,6 +51,15 @@ function deletarClasse(elemento) {
 
  }
 
+//  Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
+//  a cor do mesmo;
+
+function mudarCor(e)  {
+  let elemento = e.target;
+  let cores = ['blue', 'red', 'brown', 'grey', 'black'];
+  elemento.style.color = cores[Math.round(Math.random() * 4)];
+}
+
  window.onload = () => {
     const li = document.getElementsByTagName("li");
    for (let elemento of li) {
@@ -62,6 +71,7 @@ function deletarClasse(elemento) {
 
    const titulo = document.getElementById('my-spotrybefy');
    titulo.addEventListener('dblclick', abrirPagina);
+   titulo.addEventListener('mouseover', mudarCor);
   
  }
 
