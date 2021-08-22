@@ -1,9 +1,19 @@
 
-function adicionarSpan(tarefa) {
+function adicionarLegenda(cor){
+  let criarDivComCor = document.createElement('div');
+  criarDivComCor.style.backgroundColor = cor;
+  criarDivComCor.className = 'task';
+  return criarDivComCor;
+}
+
+function adicionarSpan(tarefa, legenda) {
   let div = document.querySelector('.my-tasks');
   let span = document.createElement('span');
   span.innerText = tarefa;
+  let corLegenda = adicionarLegenda(legenda);
+
   div.appendChild(span);
+  div.appendChild(corLegenda);
 }
 
 function diminuirTamannhoLetra(evento) {
@@ -150,7 +160,7 @@ function chamarTodasAsMainFunctions() {
   criarBtnFriday('Sexta-feira');
   adicionarListenerBtnFriday();
   adicionarListenerLi();
-  adicionarSpan('cozinhar');
+  adicionarSpan('cozinhar', 'blue');
 }
 
 window.onload = chamarTodasAsMainFunctions;
