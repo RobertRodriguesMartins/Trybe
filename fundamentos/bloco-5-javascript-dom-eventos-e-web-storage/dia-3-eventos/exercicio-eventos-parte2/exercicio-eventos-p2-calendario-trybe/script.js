@@ -1,10 +1,40 @@
+function verValorDoBotao(valueDoBotao) {
+  let cor = "";
+  let valor = "";
+  if (valueDoBotao === 'true') {
+    cor = "rgb(238, 238, 238)";
+    valor = false;
+  } else if (valueDoBotao === "false") {
+    cor = '#777';
+    valor = true;
+  }
+  return [cor, valor];
+}
+
+function mudarCorDoBotao(evento){
+  let btn = evento.target;
+  let feriados = document.getElementsByClassName('holiday');
+  console.log(feriados)
+  let valoresDoBotao = verValorDoBotao(btn.value);
+  let cor = valoresDoBotao[0];
+  btn.value = valoresDoBotao[1];
+  for (let i = 0; i < feriados.length; i += 1) {
+    let elemento = feriados[i];
+    elemento.style.color = cor;
+  }
+}
+
+function adicionarListenerBtnHoliday() {
+  let pegarBotao = document.getElementById('btn-holiday');
+  pegarBotao.addEventListener('click', mudarCorDoBotao);
+}
 
 function criarBtnHoliday(frase) {
   let div = document.getElementsByClassName('buttons-container')[0];
   let btn = document.createElement('button');
   btn.id = 'btn-holiday';
+  btn.value = true;
   btn.innerText = frase;
-
   div.appendChild(btn);
 }
 
@@ -55,11 +85,11 @@ function createDaysOfTheWeek() {
   };
 }; 
   
-// Escreva seu código abaixo.
 function chamarTodasAsMainFunctions() {
   createDaysOfTheWeek();
   fazerListaDiasDoMes();
   criarBtnHoliday('Feriados');
+  adicionarListenerBtnHoliday();
 }
 
 chamarTodasAsMainFunctions()
