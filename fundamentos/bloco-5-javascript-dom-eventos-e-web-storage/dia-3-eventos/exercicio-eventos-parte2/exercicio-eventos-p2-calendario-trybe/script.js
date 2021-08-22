@@ -7,10 +7,12 @@ function selecionarCor(evento) {
     for (let i = 0; i < elementos.length; i += 1) {
         if (elemento === elementos[i]) {
           elemento.className = 'task';
+          elemento.style.padding = '';
         }
     }
   } else {
     elemento.className += ' selected';
+    elemento.style.padding = '20px';
   } 
 }
 
@@ -32,6 +34,17 @@ function adicionarSpan(tarefa, legenda) {
   div.appendChild(corLegenda);
 }
 
+function mudarCor(evento) {
+  let elemento = evento.target;
+  let divSelecionada = document.querySelector('.selected');
+
+  if (elemento.style.color !== divSelecionada.style.backgroundColor) {
+    elemento.style.color = divSelecionada.style.backgroundColor;
+  } else  {
+    elemento.style.color = 'rgb(119, 119, 119)';
+  }
+}
+
 function diminuirTamannhoLetra(evento) {
   let elemento = evento.target;
   elemento.style.fontSize = "";
@@ -47,6 +60,7 @@ function adicionarListenerLi() {
   for (let i = 0; i < li.length; i += 1) {
     li[i].addEventListener('mouseover', aumentarTamanhoLetra);
     li[i].addEventListener('pointerout', diminuirTamannhoLetra);
+    li[i].addEventListener('click', mudarCor);
   }
 }
 function modificarTextosElementosFriday(evento) {
