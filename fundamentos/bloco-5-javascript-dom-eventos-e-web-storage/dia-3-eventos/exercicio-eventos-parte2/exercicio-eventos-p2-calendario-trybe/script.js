@@ -1,3 +1,13 @@
+
+function criarBtnFriday(frase) {
+  let btn = document.createElement('button');
+  btn.id = 'btn-friday';
+  btn.value = true;
+  btn.innerText = frase;
+
+  let div = document.querySelector('.buttons-container');
+  div.appendChild(btn);
+}
 function verValorDoBotao(valueDoBotao) {
   let cor = "";
   let valor = "";
@@ -90,7 +100,8 @@ function chamarTodasAsMainFunctions() {
   fazerListaDiasDoMes();
   criarBtnHoliday('Feriados');
   adicionarListenerBtnHoliday();
+  criarBtnFriday('Sexta-feira');
 }
 
-chamarTodasAsMainFunctions()
+window.onload = chamarTodasAsMainFunctions;
 
