@@ -1,3 +1,26 @@
+function modificarTextosElementosFriday(evento) {
+  let elemento = evento.target;
+  let valores = verValorDoBotao(elemento.value);
+  elemento.value = valores[1];
+  let listaElementosFriday = document.getElementsByClassName('friday');
+  let listaDiasFriday = [4, 11, 18, 25];
+
+  for (let i = 0; i < listaElementosFriday.length; i += 1) {
+    if (elemento.value === 'true') {
+      let elemento = listaElementosFriday[i];
+      elemento.innerText = listaDiasFriday[i];
+    } else {
+      let elemento = listaElementosFriday[i];
+      elemento.innerText = "Sexta-feira";
+    }
+  }
+
+}
+
+function adicionarListenerBtnFriday() {
+  let btn = document.querySelector('#btn-friday');
+  btn.addEventListener('click', modificarTextosElementosFriday);
+}
 
 function criarBtnFriday(frase) {
   let btn = document.createElement('button');
@@ -24,7 +47,6 @@ function verValorDoBotao(valueDoBotao) {
 function mudarCorDoBotao(evento){
   let btn = evento.target;
   let feriados = document.getElementsByClassName('holiday');
-  console.log(feriados)
   let valoresDoBotao = verValorDoBotao(btn.value);
   let cor = valoresDoBotao[0];
   btn.value = valoresDoBotao[1];
@@ -101,6 +123,7 @@ function chamarTodasAsMainFunctions() {
   criarBtnHoliday('Feriados');
   adicionarListenerBtnHoliday();
   criarBtnFriday('Sexta-feira');
+  adicionarListenerBtnFriday();
 }
 
 window.onload = chamarTodasAsMainFunctions;
