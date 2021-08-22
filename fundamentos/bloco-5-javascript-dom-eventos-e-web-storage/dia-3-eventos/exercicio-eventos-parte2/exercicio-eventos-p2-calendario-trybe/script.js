@@ -1,4 +1,11 @@
 
+function adicionarSpan(tarefa) {
+  let div = document.querySelector('.my-tasks');
+  let span = document.createElement('span');
+  span.innerText = tarefa;
+  div.appendChild(span);
+}
+
 function diminuirTamannhoLetra(evento) {
   let elemento = evento.target;
   elemento.style.fontSize = "";
@@ -143,6 +150,7 @@ function chamarTodasAsMainFunctions() {
   criarBtnFriday('Sexta-feira');
   adicionarListenerBtnFriday();
   adicionarListenerLi();
+  adicionarSpan('cozinhar');
 }
 
 window.onload = chamarTodasAsMainFunctions;
