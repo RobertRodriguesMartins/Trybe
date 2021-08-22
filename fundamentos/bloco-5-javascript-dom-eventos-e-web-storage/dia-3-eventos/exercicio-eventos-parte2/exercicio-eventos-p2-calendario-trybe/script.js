@@ -1,8 +1,24 @@
 
+function selecionarCor(evento) {
+  let elemento = evento.target;
+  let elementos = document.getElementsByClassName('selected');
+
+  if (elementos.length > 0) {
+    for (let i = 0; i < elementos.length; i += 1) {
+        if (elemento === elementos[i]) {
+          elemento.className = 'task';
+        }
+    }
+  } else {
+    elemento.className += ' selected';
+  } 
+}
+
 function adicionarLegenda(cor){
   let criarDivComCor = document.createElement('div');
   criarDivComCor.style.backgroundColor = cor;
   criarDivComCor.className = 'task';
+  criarDivComCor.addEventListener('click', selecionarCor);
   return criarDivComCor;
 }
 
@@ -161,6 +177,7 @@ function chamarTodasAsMainFunctions() {
   adicionarListenerBtnFriday();
   adicionarListenerLi();
   adicionarSpan('cozinhar', 'blue');
+  adicionarSpan('testar coisas', 'red');
 }
 
 window.onload = chamarTodasAsMainFunctions;
