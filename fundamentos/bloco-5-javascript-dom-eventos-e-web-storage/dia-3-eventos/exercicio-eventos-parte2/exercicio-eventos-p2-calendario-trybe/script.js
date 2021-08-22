@@ -1,3 +1,21 @@
+
+function diminuirTamannhoLetra(evento) {
+  let elemento = evento.target;
+  elemento.style.fontSize = "";
+}
+
+function aumentarTamanhoLetra(evento) {
+  let elemento = evento.target;
+  elemento.style.fontSize = '30px';
+}
+
+function adicionarListenerLi() {
+  let li = document.querySelectorAll('li.day')
+  for (let i = 0; i < li.length; i += 1) {
+    li[i].addEventListener('mouseover', aumentarTamanhoLetra);
+    li[i].addEventListener('pointerout', diminuirTamannhoLetra);
+  }
+}
 function modificarTextosElementosFriday(evento) {
   let elemento = evento.target;
   let valores = verValorDoBotao(elemento.value);
@@ -124,6 +142,7 @@ function chamarTodasAsMainFunctions() {
   adicionarListenerBtnHoliday();
   criarBtnFriday('Sexta-feira');
   adicionarListenerBtnFriday();
+  adicionarListenerLi();
 }
 
 window.onload = chamarTodasAsMainFunctions;
