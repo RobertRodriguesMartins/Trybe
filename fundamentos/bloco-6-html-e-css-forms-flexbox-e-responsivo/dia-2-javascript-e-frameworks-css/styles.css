@@ -1,0 +1,12 @@
+fieldset {
+  width: 50%;
+}
+fieldset > * {
+  padding: 20px;
+  width: 90%;
+}
+
+fieldset input[type='radio'] {
+  width: 20px;
+}
+
