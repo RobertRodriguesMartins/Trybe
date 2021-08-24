@@ -78,6 +78,9 @@ body {
   flex-direction: column;
   margin: 20px;
   flex-basis: 350px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .aside-container h3, h4 {
