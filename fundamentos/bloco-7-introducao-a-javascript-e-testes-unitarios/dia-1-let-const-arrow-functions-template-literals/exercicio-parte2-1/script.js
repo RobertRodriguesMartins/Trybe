@@ -16,4 +16,6 @@ console.log(fatorar(fatore));
 
 const fatorialDeN = n => (n > 1) ? n * fatorialDeN(n - 1): 1;
 
+
+
 console.log(fatorialDeN(4));
