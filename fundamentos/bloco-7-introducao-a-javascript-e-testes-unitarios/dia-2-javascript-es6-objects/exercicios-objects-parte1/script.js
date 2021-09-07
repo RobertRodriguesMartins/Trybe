@@ -59,14 +59,46 @@ assert.throws(() => {
   customerInfo(1);
 }, 'função aceitando string e/ou number')
 
-
-
-
 console.log(customerInfo(order));
+
+
+const valorComida = comida => {
+  const tamanho = comida.length;
+  let valor = 0;
+  for (let i = 0; i < tamanho; i += 1) {
+    valor += parseFloat((comida[i].amount * comida[i].price).toPrecision(4));
+  }
+  return valor;
+}
+
+const valorBebida = bebido => {
+  const tamanho = bebido.length;
+  let valor = 0;
+  for (let i = 0; i < tamanho; i += 1) {
+    valor += parseFloat((bebido[i].amount * bebido[i].price).toPrecision(4));
+  }
+  return valor;
+}
+
+// "Olá Luiz Silva, o total do seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ 50,00."
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
+  if (typeof order === 'object') {
+    const foodKeys = Object.keys(order.order.pizza);
+    const drinkValues = Object.values(order.order.drinks);
+    const comanda = `${foodKeys.join(', ')} e ${drinkValues[0].type}`;
 
+    const foodValues = Object.values(order.order.pizza);
+    const foodValue = valorComida(foodValues);
+
+    const drinkValue = valorBebida(drinkValues);
+
+    const value = foodValue + drinkValue;
+
+    console.log(`olá ${order.name}, o total do seu pedido de ${comanda} é de R$${value} reais.`);
+
+  }
 }
 
 orderModifier(order);
