@@ -77,6 +77,7 @@ const students = estudantes.map(elemento => {
   const maiorNota = elemento.materias.reduce((maior, elemento) => {
     return (maior.nota < parseInt(elemento.nota)) ? maior = {materia: elemento.name, nota: parseInt(elemento.nota)}: maior;
   }, {nota: 0});
-  maiorNota.nome = elemento.nome;
-  return maiorNota;
+  return {nome: elemento.nome, materia: maiorNota.materia};
 });
+
+console.log(students)
