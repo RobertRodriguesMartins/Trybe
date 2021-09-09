@@ -10,8 +10,8 @@ console.log(finalValue);
 
 const n = [18, 19, 23, 53, 4, 5, 76, 23, 54];
 
-const even = n.filter(elemento => elemento % 2 === 0);
+const even = n.filter(elemento => elemento % 2 === 0).reduce((a, b) => a + b);;
 
-const fv = even.reduce((a, b) => a + b);
+// const fv = even.reduce((a, b) => a + b);
 
-console.log(fv)
+console.log(even)
