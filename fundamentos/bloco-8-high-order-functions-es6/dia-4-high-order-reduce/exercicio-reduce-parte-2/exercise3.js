@@ -65,15 +65,20 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-function reduceNames() {
-  const nwArray = books.reduce((acc, elemento, index, array) => {
-    let string = `${acc} ${elemento.author.name}.`
-    if (index !== array.length - 1) {
-      string = `${acc} ${elemento.author.name},`
+const expectedResult = 43;
+
+function averageAge() {
+  const nwArray3 = books.reduce((acc, elemento, index, array) => {
+    const idadePessoa = elemento.releaseYear - elemento.author.birthYear;
+    let valor = acc + idadePessoa;
+    if (index === array.length - 1) {
+      const idadePessoaAtual = elemento.releaseYear - elemento.author.birthYear;
+      valor = (acc + idadePessoaAtual)/ array.length;
     }
-    return string;
-  }, "")
-  return nwArray.trim();
+    return valor;
+  }, 0)
+
+  return nwArray3;
 }
 
-assert.strictEqual(reduceNames(), expectedResult);
+assert.strictEqual(averageAge(), expectedResult);
