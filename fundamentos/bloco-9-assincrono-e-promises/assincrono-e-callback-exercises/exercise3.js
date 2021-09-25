@@ -9,4 +9,4 @@ const getPlanet = () => {
   console.log("Returned planet: ", mars);
 };
 
-const id = setTimeout(getPlanet, 4000);
+setTimeout(getPlanet, 4000);
