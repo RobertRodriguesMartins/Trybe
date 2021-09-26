@@ -10,4 +10,12 @@ function verifiedFetch(url) {
       reject(new Error('endpoint não existe'));
     }
   });
-};
+}
+
+async function sendJokeToFriend(name) {
+  const message = await verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .catch((err) => err);
+  console.log(`Oi ${name}, ouve essa: ${message}`)
+}
+
+sendJokeToFriend("Anna");
