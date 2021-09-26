@@ -17,7 +17,7 @@ const order = {
       pepperoni: {
         amount: 1,
         price: 20,
-      }
+      },
     },
     drinks: {
       coke: {
