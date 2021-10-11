@@ -4,14 +4,10 @@ class Estados extends React.Component {
 
   constructor () {
     super()
-    
-    this.getStates = this.getStates.bind(this);
 
     this.state = {
-      estados: '',
+      estados: [],
     }
-
-    this.getStates();
   }
 
   sortStates(states) {
@@ -26,7 +22,7 @@ class Estados extends React.Component {
     )
   }
 
-  async getStates() {
+  async componentDidMount() {
     const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados',{
       method: 'GET'
     })
@@ -35,16 +31,20 @@ class Estados extends React.Component {
     const states = this.mapStates(toJson);
     const sortedStates = this.sortStates(states);
 
-    this.state.estados = sortedStates;
+    this.setState(() => ({
+      estados: sortedStates,
+    }))
   }
 
   render() {
     const { value, changeHandler } = this.props;
-
+    const { estados } = this.state;
     return (
       <select value={ value } name="estado" onChange={ changeHandler }>
         <option value="">Selecione</option>
-        {/* {this.state.estados.map((el))} */}
+        {estados.map((state) => (
+          <option key={ state } value={ state }>{ state }</option>
+        ))}
       </select>
     )
   }

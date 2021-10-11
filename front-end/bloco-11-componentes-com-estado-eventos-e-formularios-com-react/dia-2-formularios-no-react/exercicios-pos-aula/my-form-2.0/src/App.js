@@ -6,6 +6,7 @@ import Nome from './components/Nome';
 import Endereco from './components/Endereco';
 import Cidade from './components/Cidade';
 import Estados from './components/Estados';
+import RadioBtn from './components/RadioBtn';
 
 class App extends React.Component {
   constructor () {
@@ -23,6 +24,7 @@ class App extends React.Component {
       endereco: '',
       cidade: '',
       estado: '',
+      radio: '',
     }
   }
 
@@ -91,6 +93,9 @@ class App extends React.Component {
           <Estados
             value={ this.state.estado }
             changeHandler= { this.changeHandler }
+          />
+          <RadioBtn 
+            changeHandler= { this.changeHandler }  
           />
         </fieldset>
         <button type="submit">Enviar</button>
