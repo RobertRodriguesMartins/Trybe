@@ -1,37 +1,50 @@
 const modelUsers = require('../../model/Users');
-const test1 = require('./user/firstName');
-const test2 = require('./user/lastName');
-const test3 = require('./user/email');
-const test4 = require('./user/password');
-
-function returnTests([firstName, lastName, email, password]) {
-  return ({
-    firstname: test1(firstName),
-    lastName: test2(lastName),
-    email: test3(email),
-    password: test4(password)
-  })
-}
+const util = require('./user/helper/util');
 
 async function callUserModel(values) {
   const result = await modelUsers.add(values);
 
-  return result
+  return result;
 }
 
 async function checkInputs(values) {
-  const test = Object.values(returnTests(values));
+  const test = Object.values(util.returnTests(values));
   //by error i mean false bool, true if its ok.
   const errors = test.find((test) => test !== true);
   // if there are errors then return error 
   if (errors) {
-    return errors;
+    return ({
+      status: 500,
+      response: {
+        error: true,
+        message: errors
+      }
+    });
   }
   //if its ok, it should call model and bring result to express
   const result = await callUserModel(values);
-  return result;
+  return ({
+    status: 201,
+    response: result
+  });
+}
+
+async function getAllUsers() {
+  const result = await modelUsers.getAll()
+
+  if(result.length < 1) {
+    return ({
+      status: 200,
+      response: []
+    })
+  };
+  return ({
+    status: 200,
+    response: result
+  })
 }
 
 module.exports = {
-  checkInputs
+  checkInputs,
+  getAllUsers
 };

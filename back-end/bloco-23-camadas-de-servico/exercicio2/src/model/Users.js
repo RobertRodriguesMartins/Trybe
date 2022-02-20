@@ -11,6 +11,15 @@ async function add([firstname, lastname, email, password]) {
   });
 }
 
+async function getAll() {
+  const query = 'SELECT firstName, lastName FROM users';
+  const [result] = await connection.execute(query);
+
+  return result;
+}
+
+
 module.exports = {
-  add
+  add,
+  getAll
 }
